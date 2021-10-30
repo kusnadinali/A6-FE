@@ -7,6 +7,7 @@ const Header = () => {
         <View style={styles.header}>
             <Text style={styles.textTitle}>Feed</Text>
             <Image source={mail} style={styles.mail} />
+            <Text>hai</Text>
         </View>
     )
 }
