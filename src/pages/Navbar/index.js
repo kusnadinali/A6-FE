@@ -31,7 +31,7 @@ export default Navbar;
 
 const styles = StyleSheet.create({
     wrapper:{
-        backgroundColor: 'grey'
+        backgroundColor: '#E3E1E1'
     },
     body: {
         width: 360,
