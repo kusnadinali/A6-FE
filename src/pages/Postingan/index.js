@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import profil from '../../assets/image/profil.jpg'
 import dot from '../../assets/icons/dot.png'
@@ -6,33 +7,50 @@ import comment from '../../assets/icons/comment.png'
 import like from '../../assets/icons/like.png'
 import maximize from '../../assets/icons/maximize.png'
 
-const Postingan = () => {
+const Postingan = ({profilImage,username,postImage,postLike,postComment,postCaption}) => {
+    // const [dataPostingan,setDataPostingan] = useState([]);
+    // const[jumlahDB,setJumlahDB] = useState(0);
+    // useEffect(() => {
+    //     getData();
+    // },[]);
+
+    // const getData=()=>{
+    //     axios.get('https://617d57c31eadc50017136488.mockapi.io/postingan')
+    //     .then(res => {
+    //         console.log('res:',res);
+    //         // console.log('jumlah : ',Object.keys(res.data).length);
+    //         setJumlahDB(Object.keys(res.data).length);
+    //         setDataPostingan(res.data);
+    //     })
+    // }
+
     return (
         <View style={styles.wrapper}>
             <View style={styles.itemWrapper}>
                <View style={styles.headerPostingan} >
-                   <Image source={profil} style={styles.profil} />
+                   <Image source={{uri:profilImage}} style={styles.profil} />
                    <View>
-                       <Text style={styles.textUsername}>Nama ku</Text>
+                       <Text style={styles.textUsername}>{username}</Text>
                    </View>
                    <Image source={dot} style={styles.icon} />
                </View>
                {/* //=======================gambar postingan================================ */}
                <View style={styles.imagePostingan}>
-                   <Image source={{uri:'https://placeimg.com/640/480/any'}} style={styles.itemImagePostingan} />
+                   <Image source={{uri:postImage}} style={styles.itemImagePostingan} />
                </View>
                {/* //==========================like & comment amount======================= */}
                <View style={styles.likeNComment}>
                     <Image source={like}  style={styles.like}/>
-                    <Text style={styles.amount} >200</Text>
+                    <Text style={styles.amount} >{postLike}</Text>
                     <Image source={comment}  style={styles.comment}/>
-                    <Text style={styles.amount} >200</Text>
+                    <Text style={styles.amount} >{postComment} </Text>
+                    <Image source={maximize} style={styles.maximize}/>
                </View>
                {/* //========================== Caption ====================================== */}
                <View style={{alignItems:'center',marginTop:7}}>
                     <View style={styles.captionBody}>
-                        <Text style={styles.usernameCaption}>Nama ku</Text>
-                        <Text style={styles.caption}> ini adalah caption</Text>
+                        <Text style={styles.usernameCaption}>{username}</Text>
+                        <Text style={styles.caption}> {postCaption}</Text>
                     </View>
                </View>
                
@@ -129,5 +147,11 @@ const styles = StyleSheet.create({
         // lineHeight:15,
         // display:'flex',
         color:'black',
+    },
+    maximize:{
+        width:19,
+        height:19,
+        position:'absolute',
+        left: 284,
     }
 })
