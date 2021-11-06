@@ -20,7 +20,7 @@ const Feed = () => {
       });
   };
   return (
-    <View style={{backgroundColor: '#E3E1E1', height: 541}}>
+    <View style={styles.container}>
       <ScrollView>
         {dataPostingan.map(user => {
           return (
@@ -41,4 +41,9 @@ const Feed = () => {
 
 export default Feed;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#E3E1E1',
+    height: 541,
+  },
+});

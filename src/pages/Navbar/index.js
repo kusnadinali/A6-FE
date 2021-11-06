@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
-import bodynavbar from '../../assets/icons/body_navbar.png';
+// import bodynavbar from '../../assets/icons/body_navbar.png';
 import feeds from '../../assets/icons/feeds.png';
 import diamond from '../../assets/icons/diamond.png';
 import button_tengah from '../../assets/icons/button_tengah.png';
@@ -29,8 +29,9 @@ const Navbar = () => {
         <Image source={search} style={styles.icon} />
         <Text style={styles.teks}>Search</Text>
       </View>
-      <View style={styles.kotak}></View>
+      <View style={styles.kotak}>
         <Image source={button_tengah} style={styles.midButton} />
+      </View>
       <View style={styles.kotak}>
         <Image source={diamond} style={styles.icon} />
         <Text style={styles.teks}>Safety</Text>
@@ -51,12 +52,12 @@ const styles = StyleSheet.create({
     height: 75,
     bottom: 0,
     left: 0,
-    // borderTopLeftRadius: 20,
-    // borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
     flexDirection: 'row',
   },
   body: {
-    width: "100%",
+    width: '100%',
     height: 60.56,
   },
   icon: {
@@ -92,11 +93,13 @@ const styles = StyleSheet.create({
   //   top: 17.66,
   // },
   midButton: {
-    position: 'absolute',
+    // position: 'absolute',
     width: 60,
     height: 60,
-    left: "43%",
+    alignSelf: 'center',
     top: 5,
+    // left: "43%",
+    // top: 5,
     // top: 5.89,
   },
   // diamond: {
@@ -157,8 +160,8 @@ const styles = StyleSheet.create({
   //   color: '#9E9E9E',
   // },
   kotak: {
-    width: "20%",
-    height: "100%",
+    width: '20%',
+    height: '100%',
     // backgroundColor: 'lightblue',
-  }
+  },
 });

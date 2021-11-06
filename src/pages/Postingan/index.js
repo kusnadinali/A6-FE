@@ -1,7 +1,7 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import {Image, StyleSheet, Text, View} from 'react-native';
-import profil from '../../assets/image/profil.jpg';
+// import profil from '../../assets/image/profil.jpg';
 import dot from '../../assets/icons/dot.png';
 import comment from '../../assets/icons/comment.png';
 import like from '../../assets/icons/like.png';
@@ -70,7 +70,7 @@ export default Postingan;
 const styles = StyleSheet.create({
   itemWrapper: {
     // width: 314,
-    width: "90%",
+    width: '90%',
     height: 360,
     borderRadius: 20,
     // position:'absolute'
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
   },
   captionBody: {
     flexDirection: 'row',
-    width: "91%",
+    width: '91%',
     height: 40,
     // backgroundColor:'red',
   },

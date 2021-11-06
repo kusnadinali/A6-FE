@@ -17,14 +17,14 @@ export default Header;
 const styles = StyleSheet.create({
   header: {
     height: 50,
-    width: "100%",
+    width: '100%',
     left: 0,
     top: 0,
     // borderRadius: 1,
     shadowColor: '#470000',
     shadowOffset: {
-        width: 0, 
-        height: 1,
+      width: 0,
+      height: 1,
     },
     shadowOpacity: 1,
     elevation: 1,
