@@ -7,7 +7,6 @@ const Header = () => {
     <View style={styles.header}>
       <Text style={styles.textTitle}>Feed</Text>
       <Image source={mail} style={styles.mail} />
-      {/* <Text>hai</Text> */}
     </View>
   );
 };
@@ -47,7 +46,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: 20,
     height: 20,
-    left: 360,
+    right: 30,
     top: 25,
   },
 });

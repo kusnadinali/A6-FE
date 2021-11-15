@@ -107,7 +107,8 @@ const styles = StyleSheet.create({
   icon: {
     width: 25,
     height: 25,
-    right: -100,
+    position: 'absolute',
+    right: 20,
   },
   itemImagePostingan: {
     width: '93%',
