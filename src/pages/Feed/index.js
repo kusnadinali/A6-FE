@@ -1,15 +1,22 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import {ScrollView, StyleSheet, View, Text} from 'react-native';
+import {ScrollView, StyleSheet, View, Text, RefreshControl} from 'react-native';
 import Postingan from '../Postingan';
+
+const wait = timeout => {
+  return new Promise(resolve => setTimeout(resolve, timeout));
+};
 
 const Feed = () => {
   const [dataPostingan, setDataPostingan] = useState([]);
   const [jumlahDB, setJumlahDB] = useState(0);
   const [errorMessage, setErrorMessage] = useState('');
+  const [refreshing, setRefreshing] = useState(false);
+
   useEffect(() => {
     getData();
   }, []);
+
   const getData = () => {
     axios
       .get('https://617d57c31eadc50017136488.mockapi.io/postingan')
@@ -24,9 +31,18 @@ const Feed = () => {
         setErrorMessage('Oops,,\nSomething went wrong :(');
       });
   };
+
+  const onRefresh = React.useCallback(async () => {
+    setRefreshing(true);
+    wait(2000).then(() => setRefreshing(false));
+  }, []);
+
   return (
     <View style={styles.container}>
-      <ScrollView>
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }>
         {errorMessage ? (
           <Text style={styles.Err}>{errorMessage} </Text>
         ) : (
