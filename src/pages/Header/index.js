@@ -16,7 +16,6 @@ export default Header;
 const styles = StyleSheet.create({
   header: {
     height: 50,
-    width: '100%',
     left: 0,
     top: 0,
     // borderRadius: 1,
@@ -36,8 +35,6 @@ const styles = StyleSheet.create({
     left: 30,
     top: 25,
     fontFamily: 'Roboto',
-    fontStyle: 'normal',
-    fontWeight: 'normal',
     fontSize: 15,
     // lineHeight: 18,
     color: 'black',

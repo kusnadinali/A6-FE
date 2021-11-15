@@ -15,22 +15,6 @@ const Postingan = ({
   postComment,
   postCaption,
 }) => {
-  // const [dataPostingan,setDataPostingan] = useState([]);
-  // const[jumlahDB,setJumlahDB] = useState(0);
-  // useEffect(() => {
-  //     getData();
-  // },[]);
-
-  // const getData=()=>{
-  //     axios.get('https://617d57c31eadc50017136488.mockapi.io/postingan')
-  //     .then(res => {
-  //         console.log('res:',res);
-  //         // console.log('jumlah : ',Object.keys(res.data).length);
-  //         setJumlahDB(Object.keys(res.data).length);
-  //         setDataPostingan(res.data);
-  //     })
-  // }
-
   return (
     <View style={styles.wrapper}>
       <View style={styles.itemWrapper}>
@@ -54,11 +38,12 @@ const Postingan = ({
           <Image source={maximize} style={styles.maximize} />
         </View>
         {/* //========================== Caption ====================================== */}
-        <View style={{alignItems: 'center', marginTop: 7}}>
+        <View style={styles.body}>
           <View style={styles.captionBody}>
-            {/* <Text style={styles.usernameCaption}>{username}</Text>
-            <Text style={styles.caption}> {postCaption}</Text> */}
-            <Text style={styles.caption}><Text style={styles.usernameCaption}>{username}</Text> {postCaption} </Text>
+            <Text style={styles.caption}>
+              <Text style={styles.usernameCaption}>{username}</Text>{' '}
+              {postCaption}{' '}
+            </Text>
           </View>
         </View>
       </View>
@@ -70,17 +55,19 @@ export default Postingan;
 
 const styles = StyleSheet.create({
   itemWrapper: {
-    // width: 314,
     width: '90%',
-    height: 360,
     borderRadius: 20,
-    // position:'absolute'
     backgroundColor: 'white',
+  },
+  body: {
+    alignItems: 'center',
+    marginTop: 7,
   },
   wrapper: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 15,
+    marginTop: 10,
+    marginBottom: 5,
   },
   headerPostingan: {
     flexDirection: 'row',
@@ -103,7 +90,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     fontFamily: 'Roboto',
     width: 170,
-    // marginRight: 45,
   },
   icon: {
     width: 25,
@@ -114,8 +100,6 @@ const styles = StyleSheet.create({
   itemImagePostingan: {
     width: '93%',
     height: 200,
-    // width: 295,
-    // height: 180,
     borderRadius: 15,
   },
   likeNComment: {
@@ -125,7 +109,6 @@ const styles = StyleSheet.create({
   imagePostingan: {
     alignItems: 'center',
     marginBottom: 10,
-    // backgroundColor: '#eee',
   },
   like: {
     width: 20,
@@ -143,9 +126,8 @@ const styles = StyleSheet.create({
   },
   captionBody: {
     flexDirection: 'row',
-    width: '91%',
+    width: '90%',
     height: 40,
-    // backgroundColor:'red',
   },
   usernameCaption: {
     fontSize: 14,
@@ -157,15 +139,12 @@ const styles = StyleSheet.create({
   caption: {
     fontSize: 14,
     fontFamily: 'Roboto',
-    // lineHeight:15,
-    // display:'flex',
     color: 'black',
   },
   maximize: {
     width: 20,
     height: 20,
     position: 'absolute',
-    // left: 284,
     right: 15,
   },
 });

@@ -39,10 +39,10 @@ const styles = StyleSheet.create({
     height: 75,
     bottom: 0,
     left: 0,
-    right: 0,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     flexDirection: 'row',
+    backgroundColor: '#FFF',
   },
   icon: {
     width: 24,
