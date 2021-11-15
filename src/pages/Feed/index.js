@@ -19,7 +19,8 @@ const Feed = () => {
 
   const getData = () => {
     axios
-      .get('https://617d57c31eadc50017136488.mockapi.io/postingan')
+      // .get('https://617d57c31eadc50017136488.mockapi.io/postingan')
+      .get('https://617d59771eadc5001713649b.mockapi.io/Feed')
       .then(res => {
         console.log('res:', res);
         // console.log('jumlah : ',Object.keys(res.data).length);

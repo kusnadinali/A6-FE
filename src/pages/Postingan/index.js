@@ -56,8 +56,9 @@ const Postingan = ({
         {/* //========================== Caption ====================================== */}
         <View style={{alignItems: 'center', marginTop: 7}}>
           <View style={styles.captionBody}>
-            <Text style={styles.usernameCaption}>{username}</Text>
-            <Text style={styles.caption}> {postCaption}</Text>
+            {/* <Text style={styles.usernameCaption}>{username}</Text>
+            <Text style={styles.caption}> {postCaption}</Text> */}
+            <Text style={styles.caption}><Text style={styles.usernameCaption}>{username}</Text> {postCaption} </Text>
           </View>
         </View>
       </View>
