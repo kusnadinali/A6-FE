@@ -35,7 +35,10 @@ const Feed = () => {
 
   const onRefresh = React.useCallback(async () => {
     setRefreshing(true);
-    wait(2000).then(() => setRefreshing(false));
+    wait(2000).then(() => {
+      getData();
+      setRefreshing(false);
+    });
   }, []);
 
   return (
