@@ -40,10 +40,12 @@ const Postingan = ({
         {/* //========================== Caption ====================================== */}
         <View style={styles.body}>
           <View style={styles.captionBody}>
-            <Text style={styles.caption}>
-              <Text style={styles.usernameCaption}>{username}</Text>{' '}
-              {postCaption}{' '}
-            </Text>
+            {postCaption.length === 0 ? null : (
+              <Text style={styles.caption}>
+                <Text style={styles.usernameCaption}>{username}</Text>{' '}
+                {postCaption}{' '}
+              </Text>
+            )}
           </View>
         </View>
       </View>
