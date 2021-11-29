@@ -1,6 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import {ScrollView, StyleSheet, Text, RefreshControl} from 'react-native';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  RefreshControl,
+  ToastAndroid,
+} from 'react-native';
 import Postingan from '../Postingan';
 
 const wait = timeout => {
@@ -10,7 +16,7 @@ const wait = timeout => {
 const Feed = () => {
   const [dataPostingan, setDataPostingan] = useState([]);
   // const [jumlahDB, setJumlahDB] = useState(0);
-  const [errorMessage, setErrorMessage] = useState('');
+  // const [errorMessage, setErrorMessage] = useState('');
   const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
@@ -29,7 +35,8 @@ const Feed = () => {
       })
       .catch(err => {
         console.log('err: ', err);
-        setErrorMessage('Oops,,\nSomething went wrong :(');
+        ToastAndroid.show('Opss..Something went wrong!', ToastAndroid.SHORT);
+        // setErrorMessage('Oops,,\nSomething went wrong :(');
       });
   };
 
@@ -46,8 +53,8 @@ const Feed = () => {
       refreshControl={
         <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
       }>
-      {errorMessage ? (
-        <Text style={styles.Err}>{errorMessage} </Text>
+      {dataPostingan.length === 0 ? (
+        <Text style={styles.Err}>Feeds doesn't exists</Text>
       ) : (
         dataPostingan.map(user => {
           return (
