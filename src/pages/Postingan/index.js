@@ -127,7 +127,8 @@ const styles = StyleSheet.create({
   captionBody: {
     flexDirection: 'row',
     width: '90%',
-    height: 40,
+    // height: 40,
+    paddingBottom: 10,
   },
   usernameCaption: {
     fontSize: 14,
