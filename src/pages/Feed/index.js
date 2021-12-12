@@ -25,7 +25,7 @@ const Feed = () => {
         console.log('result :',res);
         
         setJumlahDB(Object.keys(res.data).length);
-        // setDataPostingan([...dataPostingan, ...res.data.data]);
+        
         setIsLoading(false);
         setDataPostingan(res.data.data);
         console.log('jumlah : ',dataPostingan.length);
