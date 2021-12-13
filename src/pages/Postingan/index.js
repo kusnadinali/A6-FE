@@ -16,14 +16,6 @@ const Postingan = ({
   postComment,
   postCaption,
 }) => {
-  const caption = () => {
-    return (
-      <Text style={styles.caption}>
-        <Text style={styles.usernameCaption}>{username}</Text> {postCaption}{' '}
-      </Text>
-    );
-  };
-
   return (
     <View style={styles.wrapper}>
       <View style={styles.itemWrapper}>
@@ -50,11 +42,10 @@ const Postingan = ({
         <View style={styles.body}>
           <View style={styles.captionBody}>
             {postCaption.length === 0 ? null : (
-              <ReadMore numberOfLines={2}>{caption()}</ReadMore>
-              // <Text style={styles.caption}>
-              //   <Text style={styles.usernameCaption}>{username}</Text>{' '}
-              //   {postCaption}{' '}
-              // </Text>
+              <ReadMore numberOfLines={2} style={styles.caption}>
+                <Text style={styles.textUsername}>{username}</Text>
+                {' ' + postCaption}
+              </ReadMore>
             )}
           </View>
         </View>
