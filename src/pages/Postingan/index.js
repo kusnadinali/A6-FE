@@ -6,6 +6,7 @@ import dot from '../../assets/icons/dot.png';
 import comment from '../../assets/icons/comment.png';
 import like from '../../assets/icons/like.png';
 import maximize from '../../assets/icons/maximize.png';
+import ReadMore from '@fawazahmed/react-native-read-more';
 
 const Postingan = ({
   profilImage,
@@ -41,10 +42,10 @@ const Postingan = ({
         <View style={styles.body}>
           <View style={styles.captionBody}>
             {postCaption.length === 0 ? null : (
-              <Text style={styles.caption}>
-                <Text style={styles.usernameCaption}>{username}</Text>{' '}
-                {postCaption}{' '}
-              </Text>
+              <ReadMore numberOfLines={2} style={styles.caption}>
+                <Text style={styles.textUsername}>{username}</Text>
+                {' ' + postCaption}
+              </ReadMore>
             )}
           </View>
         </View>
