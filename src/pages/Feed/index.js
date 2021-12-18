@@ -42,8 +42,8 @@ const Feed = () => {
         profilImage={item.image_file} 
         username={item.name} 
         postImage={item.image_feed}
-        postLike={20}
-        postComment={20}
+        postLike={item.total_likes}
+        postComment={item.total_comment}
         postCaption={item.caption_feed} />
       </View>
     );
